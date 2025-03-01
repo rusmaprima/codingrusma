@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science LMS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #1a1a2e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            background: #16213e;
+        }
+        nav ul li {
+            display: inline;
+            margin: 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+        }
+        .hero {
+            text-align: center;
+            background: #0f3460;
+            color: white;
+            padding: 50px 20px;
+            font-size: 22px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .section-title {
+            color: #2980b9;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        button {
+            background: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quiz-container {
+            margin-top: 20px;
+        }
+        .quiz-question {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Data Science & Machine Learning LMS
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#course">Course</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#discussion">Discussion</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <h1>Master Data Science & Machine Learning</h1>
+        <p>Join thousands of students worldwide and learn the skills that power AI and Big Data.</p>
+    </div>
+    <div class="container">
+        <section id="course">
+            <h2 class="section-title">Introduction to Data Science & Machine Learning</h2>
+            <p>Data Science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data.</p>
+            <p>Machine Learning, a subset of AI, allows systems to learn and improve from experience without being explicitly programmed.</p>
+            
+            <h3 class="section-title">Why Learn Data Science?</h3>
+            <ul>
+                <li>High demand in various industries</li>
+                <li>Opportunities in AI and automation</li>
+                <li>Data-driven decision-making</li>
+            </ul>
+            
+            <h2 class="section-title">Introduction to Python</h2>
+            <p>Python is a powerful programming language widely used in data science.</p>
+            
+            <h3>1. Print Statement</h3>
+            <p>The <code>print()</code> function is used to display output.</p>
+            <pre>
+print("Hello, Data Science!")
+            </pre>
+            
+            <h3>2. Variables</h3>
+            <p>Variables store data. Example:</p>
+            <pre>
+x = 5
+y = "Hello"
+print(x)
+print(y)
+            </pre>
+            
+            <h3>3. Data Types</h3>
+            <ul>
+                <li><code>int</code>: Integer (e.g., 5, -3)</li>
+                <li><code>float</code>: Decimal (e.g., 3.14, -0.5)</li>
+                <li><code>str</code>: String (e.g., "hello")</li>
+                <li><code>bool</code>: Boolean (e.g., True, False)</li>
+            </ul>
+            
+            <h3>4. If-Else Condition</h3>
+            <p>The <code>if</code> statement checks conditions.</p>
+            <pre>
+x = 10
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is 5 or less")
+            </pre>
+            
+            <h3>Try It Yourself!</h3>
+            <p>Use the embedded IDE below to try Python code:</p>
+            <iframe src="https://trinket.io/embed/python3"></iframe>
+        </section>
+
+        <section id="quiz" class="quiz-container">
+            <h2 class="section-title">Interactive Assessment</h2>
+            <p>Test your understanding with this interactive quiz.</p>
+            <div class="quiz-question">
+                <p>1. What is the output of <code>print(3 + 4)</code>?</p>
+                <input type="number" id="q1">
+            </div>
+            <div class="quiz-question">
+                <p>2. What data type is <code>3.14</code> in Python?</p>
+                <input type="text" id="q2">
+            </div>
+            <div class="quiz-question">
+                <p>3. What keyword is used for decision-making in Python?</p>
+                <input type="text" id="q3">
+            </div>
+            <div class="quiz-question">
+                <p>4. What will <code>print("Data" + " Science")</code> output?</p>
+                <input type="text" id="q4">
+            </div>
+            <div class="quiz-question">
+                <p>5. What is the correct syntax to declare a variable in Python?</p>
+                <input type="text" id="q5">
+            </div>
+            <button onclick="checkQuiz()">Submit</button>
+            <p id="quiz-result"></p>
+        </section>
+    </div>
+    <script>
+        function checkQuiz() {
+            let score = 0;
+            if (document.getElementById("q1").value == 7) score++;
+            if (document.getElementById("q2").value.toLowerCase() == "float") score++;
+            if (document.getElementById("q3").value.toLowerCase() == "if") score++;
+            if (document.getElementById("q4").value.toLowerCase() == "data science") score++;
+            if (document.getElementById("q5").value.toLowerCase() == "x = 5") score++;
+            document.getElementById("quiz-result").innerText = "Your score: " + score + "/5";
+        }
+    </script>
+</body>
+</html>
